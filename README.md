@@ -1,3 +1,5 @@
 youtube clone using react js and typescript
 
-![](public/favicon.png)
+author: Xasanjon Abdunabiyev
+
+![youtube](src/assets/logo.png)
