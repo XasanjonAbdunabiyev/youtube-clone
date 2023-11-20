@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import {  useState } from "react"
 import { formatDuration } from "../utils/formatDuration"
 import { formatTimeAgo } from "../utils/formatTimeAgo"
 
@@ -27,7 +27,6 @@ export function VideoGridItem({
     postedAt,
     duration,
     thumbnailUrl,
-    iframeUrl,
 }: VideoGridItemProps) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
