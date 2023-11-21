@@ -2,7 +2,7 @@ import { useState } from "react"
 import { formatDuration } from "../utils/formatDuration"
 import { formatTimeAgo } from "../utils/formatTimeAgo"
 
-type VideoGridItemProps = {
+export type VideoGridItemProps = {
     id: string
     title: string
     channel: {
@@ -10,6 +10,7 @@ type VideoGridItemProps = {
         name: string
         profileUrl: string
     }
+    category: string;
     views: number
     postedAt: Date
     duration: number

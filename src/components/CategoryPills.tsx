@@ -1,7 +1,14 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./Button";
 
-import { useState, useRef, useEffect } from "react";
+
+import {
+    useState, useRef, useEffect,
+    //  useContext 
+} from "react";
+// import { CategoryPillsContext } from "../contexts/CategoryPillsContext";
+
+
 
 type CategoryPillProps = {
     categories: string[],
@@ -18,6 +25,8 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
     const [isRightVisible, setIsRightVisible] = useState(true);
 
     const containerRef = useRef<HTMLDivElement>(null);
+
+    // const changeCategoryFunc = useContext(CategoryPillsContext)
 
     useEffect(() => {
         if (containerRef.current == null) return;
@@ -39,12 +48,13 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
     return (
         <div ref={containerRef} className="overflow-x-hidden relative">
             <div
-
                 className="flex whitespace-nowrap gap-3 transition-transform w-[max-content]" style={{ transform: `translateX(-${translate}px)` }}>
                 {categories.map(category => (
                     <Button variant={selectedCategory === category ? "dark" : "default"}
                         key={category}
-                        onClick={() => onSelect(category)}
+                        onClick={() => {
+                            onSelect(category)
+                        }}
                         className="py-1 px-3 rounded-lg whitespace-nowrap">
                         {category}
                     </Button>

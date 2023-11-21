@@ -2,6 +2,7 @@ export const categories = [
     "All",
     "Javascript",
     "Typescript", 
+    "Horror",
     "React",
     "Programming",
     "Hiking",
@@ -13,3 +14,5 @@ export const categories = [
     "Softwere Enigers one day of life",
     "Backend Web Development"
 ]
+
+
