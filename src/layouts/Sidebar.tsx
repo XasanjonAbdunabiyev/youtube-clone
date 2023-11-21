@@ -21,13 +21,14 @@ import {
   Shirt,
   Podcast,
 } from "lucide-react";
+
 import { Children, ElementType, ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useSidebarContext } from "../contexts/SidebarContext";
-import { PageHeaderFirstSection } from "./PageHeader";
 import { playlists, subscriptions } from "../data/sidebar";
 import { Button, buttonStyles } from "../components/Button";
 import { SmallSidebarItem } from "./SmallSidebarItem/SmallSidebarItem";
+import { PageHeaderFirstSection } from "./PageHeaderFirstSection";
 
 export function Sidebar() {
   const { isLargeOpen, isSmallOpen, close } = useSidebarContext();
@@ -35,9 +36,8 @@ export function Sidebar() {
   return (
     <>
       <aside
-        className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 ${
-          isLargeOpen ? "lg:hidden" : "lg:flex"
-        }`}
+        className={`sticky top-0 overflow-y-auto  pb-4 flex flex-col ml-1 ${isLargeOpen ? "lg:hidden" : "lg:flex"
+          }`}
       >
         <SmallSidebarItem Icon={Home} title="Home" url="/" />
         <SmallSidebarItem Icon={Repeat} title="Shorts" url="/shorts" />
@@ -55,9 +55,8 @@ export function Sidebar() {
         />
       )}
       <aside
-        className={`w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${
-          isLargeOpen ? "lg:flex" : "lg:hidden"
-        } ${isSmallOpen ? "flex z-[999] bg-white max-h-screen" : "hidden"}`}
+        className={`w-72 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${isLargeOpen ? "lg:flex" : "lg:hidden"
+          } ${isSmallOpen ? "flex z-[999] bg-white max-h-screen" : "hidden"}`}
       >
         <div className="lg:hidden pt-2 pb-4 px-2 sticky top-0 bg-white">
           <PageHeaderFirstSection />
@@ -218,8 +217,7 @@ function LargeSidebarItem({
       href={url}
       className={twMerge(
         buttonStyles({ variant: "ghost" }),
-        `w-full flex items-center rounded-lg gap-4 p-3 ${
-          isActive ? "font-bold bg-neutral-100 hover:bg-secondary" : undefined
+        `w-full flex items-center rounded-lg gap-4 p-3 ${isActive ? "font-bold bg-neutral-100 hover:bg-secondary" : undefined
         }`
       )}
     >

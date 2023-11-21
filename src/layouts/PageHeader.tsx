@@ -1,19 +1,17 @@
-import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from "lucide-react";
-import logo from "../assets/logo.png";
+import { ArrowLeft, Bell, Mic, Search, Upload, User } from "lucide-react";
 import { Button } from "../components/Button";
 import { useState } from "react";
-import { useSidebarContext } from "../contexts/SidebarContext";
+import { PageHeaderFirstSection } from "./PageHeaderFirstSection";
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
 
   return (
-    <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
+    <div className="flex gap-10 lg:gap-20 justify-between p-4 mb-6 mx-4 w-full">
       <PageHeaderFirstSection hidden={showFullWidthSearch} />
       <form
-        className={`gap-4 flex-grow justify-center ${
-          showFullWidthSearch ? "flex" : "hidden md:flex"
-        }`}
+        className={`gap-4 flex-grow justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"
+          }`}
       >
         {showFullWidthSearch && (
           <Button
@@ -41,9 +39,8 @@ export function PageHeader() {
         </Button>
       </form>
       <div
-        className={`flex-shrink-0 md:gap-2 ${
-          showFullWidthSearch ? "hidden" : "flex"
-        }`}
+        className={`flex-shrink-0 md:gap-2 ${showFullWidthSearch ? "hidden" : "flex"
+          }`}
       >
         <Button
           onClick={() => setShowFullWidthSearch(true)}
@@ -66,32 +63,6 @@ export function PageHeader() {
           <User />
         </Button>
       </div>
-    </div>
-  );
-}
-
-type PageHeaderFirstSectionProps = {
-  hidden?: boolean;
-};
-
-export function PageHeaderFirstSection({
-  hidden = false,
-}: PageHeaderFirstSectionProps) {
-  const { toggle } = useSidebarContext();
-
-  return (
-    <div
-      className={`gap-4 items-center flex-shrink-0 ${
-        hidden ? "hidden" : "flex"
-      }`}
-    >
-      <Button onClick={toggle} variant="ghost" size="icon">
-        <Menu />
-      </Button>
-      <a href="/" className="font-bold font-mono flex gap-2 items-center">
-        <img src={logo} className="h-10" />
-        Xasanjon Abdunabiyev
-      </a>
     </div>
   );
 }

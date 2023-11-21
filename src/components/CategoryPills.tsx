@@ -34,7 +34,7 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
             observer.disconnect()
         }
 
-    }, [categories, translate])
+    }, [categories, translate]);
 
     return (
         <div ref={containerRef} className="overflow-x-hidden relative">

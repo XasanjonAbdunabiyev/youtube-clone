@@ -11,14 +11,27 @@ import { VideoGridItem } from "./components/VideoGridItem";
 import { SidebarProvider } from "./contexts/SidebarContext";
 import { Sidebar } from "./layouts/Sidebar";
 
+// import { useQuery } from "@tanstack/react-query"
+// import { getHomePage } from "./services";
+// import { HomeVidoes, VidoeProps } from "./types/home";
+
+
+
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+
+  // const { data } = useQuery({ queryKey: ["home-page"], queryFn: () => getHomePage(String(import.meta.env.VITE_BASE_URL) + '/home/') })
+
+  // const contents: HomeVidoes[] = data?.contents;
+
+
+
   return (
     <SidebarProvider>
-      <div className="flex flex-col max-h-screen">
+      <div className="flex flex-col max-h-screen overflow-hidden">
         <PageHeader />
         <div className="grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto">
-          <Sidebar/>
+          <Sidebar />
           <div className="overflow-x-hidden px-10 pb-4">
             <div className="sticky top-0 bg-white z-10 pb-4">
               <CategoryPills
@@ -27,7 +40,7 @@ export default function App() {
                 categories={categories} />
             </div>
 
-            <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
+            <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(40%,1fr))] max-[750px]:grid-cols-[repeat(auto-fill,minmax(95%,1fr))]">
               {videos?.map((video) => {
                 return <VideoGridItem key={video.id} {...video} />
               })}
