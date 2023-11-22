@@ -27,6 +27,7 @@ export function VideoGridItem({
     views,
     postedAt,
     duration,
+    iframeUrl,
     thumbnailUrl,
 }: VideoGridItemProps) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false)

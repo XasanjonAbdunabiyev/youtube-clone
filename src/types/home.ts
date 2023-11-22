@@ -31,3 +31,20 @@ export type VidoeProps = {
   thumbnails: ImageProps[];
   videoId: string;
 };
+
+
+export type IVidoesProps =  {
+  category: string;
+  channel : {
+    name : string;
+    profileUrl: string;
+    id : string;
+  }
+  title: string;
+  duration: number;
+  id: string;
+  postedAt: Date;
+  views: number;
+  thumbnailUrl: string;
+  iframeUrl: string;
+}
