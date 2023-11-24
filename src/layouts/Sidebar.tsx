@@ -2,23 +2,10 @@ import {
   ChevronDown,
   ChevronUp,
   Clapperboard,
-  Clock,
   Home,
   PlaySquare,
   Repeat,
-  History,
-  ListVideo,
-  Flame,
-  ShoppingBag,
-  Music2,
-  Film,
-  Radio,
-  Gamepad2,
-  Newspaper,
-  Trophy,
-  Lightbulb,
-  Shirt,
-  Podcast,
+  ListVideo
 } from "lucide-react";
 
 import { Children, ElementType, ReactNode, useState } from "react";
