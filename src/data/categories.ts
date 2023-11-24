@@ -10,7 +10,7 @@ export const categories = [
     "Functional Programming",
     "Object Oriented Programming",
     "Frontend Web Development",
-    "Coading",
+    "Codeing",
     "Softwere Enigers one day of life",
     "Backend Web Development"
 ]

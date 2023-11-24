@@ -7,10 +7,10 @@ export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
 
   return (
-    <div className="flex gap-10 lg:gap-20 justify-between p-4 mb-6 mx-4 w-full">
+    <div className="flex gap-10 lg:gap-20 justify-between p-4 mb-6 mx-4">
       <PageHeaderFirstSection hidden={showFullWidthSearch} />
       <form
-        className={`gap-4 flex-grow justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"
+        className={`gap-4 flex-grow max-w-[98%] justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"
           }`}
       >
         {showFullWidthSearch && (
@@ -39,8 +39,8 @@ export function PageHeader() {
         </Button>
       </form>
       <div
-        className={`flex-shrink-0 md:gap-2 ${showFullWidthSearch ? "hidden" : "flex"
-          }`}
+        className={`flex-shrink-0 md:gap-2 w- ${showFullWidthSearch ? "hidden" : "flex"
+          } max-[475px]:flex-wrap`}
       >
         <Button
           onClick={() => setShowFullWidthSearch(true)}
