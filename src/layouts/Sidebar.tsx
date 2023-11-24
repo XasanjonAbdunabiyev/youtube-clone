@@ -4,7 +4,6 @@ import {
   Clapperboard,
   Clock,
   Home,
-  Library,
   PlaySquare,
   Repeat,
   History,
@@ -46,7 +45,6 @@ export function Sidebar() {
           title="Subscriptions"
           url="/subscriptions"
         />
-        <SmallSidebarItem Icon={Library} title="Library" url="/library" />
       </aside>
       {isSmallOpen && (
         <div
@@ -71,25 +69,11 @@ export function Sidebar() {
         </LargeSidebarSection>
         <hr />
         <LargeSidebarSection visibleItemCount={5}>
-          <LargeSidebarItem
-            IconOrImgUrl={Library}
-            title="Library"
-            url="/library"
-          />
-          <LargeSidebarItem
-            IconOrImgUrl={History}
-            title="History"
-            url="/history"
-          />
+         
           <LargeSidebarItem
             IconOrImgUrl={PlaySquare}
             title="Your Videos"
-            url="/your-videos"
-          />
-          <LargeSidebarItem
-            IconOrImgUrl={Clock}
-            title="Watch Later"
-            url="/playlist?list=WL"
+            url="/dashboard"
           />
           {playlists.map((playlist) => (
             <LargeSidebarItem
@@ -110,52 +94,6 @@ export function Sidebar() {
               url={`/@${subscription.id}`}
             />
           ))}
-        </LargeSidebarSection>
-        <hr />
-        <LargeSidebarSection title="Explore">
-          <LargeSidebarItem
-            IconOrImgUrl={Flame}
-            title="Trending"
-            url="/trending"
-          />
-          <LargeSidebarItem
-            IconOrImgUrl={ShoppingBag}
-            title="Shopping"
-            url="/shopping"
-          />
-          <LargeSidebarItem IconOrImgUrl={Music2} title="Music" url="/music" />
-          <LargeSidebarItem
-            IconOrImgUrl={Film}
-            title="Movies & TV"
-            url="/movies-tv"
-          />
-          <LargeSidebarItem IconOrImgUrl={Radio} title="Live" url="/live" />
-          <LargeSidebarItem
-            IconOrImgUrl={Gamepad2}
-            title="Gaming"
-            url="/gaming"
-          />
-          <LargeSidebarItem IconOrImgUrl={Newspaper} title="News" url="/news" />
-          <LargeSidebarItem
-            IconOrImgUrl={Trophy}
-            title="Sports"
-            url="/sports"
-          />
-          <LargeSidebarItem
-            IconOrImgUrl={Lightbulb}
-            title="Learning"
-            url="/learning"
-          />
-          <LargeSidebarItem
-            IconOrImgUrl={Shirt}
-            title="Fashion & Beauty"
-            url="/fashion-beauty"
-          />
-          <LargeSidebarItem
-            IconOrImgUrl={Podcast}
-            title="Podcasts"
-            url="/podcasts"
-          />
         </LargeSidebarSection>
       </aside>
     </>
