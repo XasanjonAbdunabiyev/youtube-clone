@@ -15,7 +15,8 @@ export type VideoGridItemProps = {
     postedAt: Date
     duration: number
     thumbnailUrl: string
-    iframeUrl: string
+    iframeUrl: string;
+    vidoeRow?: "automatic" | "single"
 }
 
 const VIEW_FORMATTER = new Intl.NumberFormat(undefined, { notation: "compact" })
@@ -24,6 +25,7 @@ export function VideoGridItem({
     id,
     title,
     channel,
+    vidoeRow,
     views,
     postedAt,
     duration,
@@ -40,7 +42,7 @@ export function VideoGridItem({
             <a href={`/watch/${id}`} className="relative aspect-video">
                 <img
                     src={thumbnailUrl}
-                    className={`block w-full h-[300px] max-[500px]:h-[200px]  object-cover transition-[border-radius] duration-200 ${isVideoPlaying ? "rounded-none" : "rounded-xl"
+                    className={`block w-full ${vidoeRow === "single" ? "h-[500px]" : "h-[300px] max-[500px]:h-[200px]"} object-cover transition-[border-radius] duration-200 ${isVideoPlaying ? "rounded-none" : "rounded-xl"
                         }`}
                 />
                 <div className="absolute bottom-1 right-1 bg-secondary-dark text-secondary text-sm px-0.5 rounded">

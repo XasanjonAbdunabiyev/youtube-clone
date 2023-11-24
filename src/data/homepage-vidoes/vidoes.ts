@@ -30,7 +30,7 @@ export const videos = [
     postedAt: new Date("2023-08-22"),
     duration: 732,
     thumbnailUrl:
-      "https://live.staticflickr.com/6111/6339810047_4f92020be0_b.jpg",
+      "https://wallpapers.com/images/hd/dark-anime-pictures-iwmu3b0sun9r6789.jpg",
     iframeUrl: "https://www.youtube.com/embed/yMlj9FlXnoc?si=DKpUZOw_yLAhQujP",
   },
   {

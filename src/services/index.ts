@@ -1,12 +1,7 @@
-import axios from "axios";
-export const getHomePage = async (url: string) => {
-    const { data } = await axios.get(url, {
-        params: { hl: 'en', gl: 'US' },
-        headers: {
-            'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
-            'X-RapidAPI-Host': import.meta.env.VITE_API_HOST
-        }
-    });
+import { videos } from "../data/homepage-vidoes/vidoes";
 
-    return data
-}
+export const getVidoeDetails = (id: string) => {
+    const video = videos.filter(video => video.id === id);
+
+    return video;
+};
