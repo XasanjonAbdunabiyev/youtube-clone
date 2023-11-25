@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home/Home";
-import { VidoeDetails } from "./pages/Videos/VidoeDetails";
+
 import Shorts from "./pages/Shorts"
 import Subscriptions from "./pages/Subscriptions";
-
+import Home from "./pages/Home"
+import VidoeDetails from "./pages/Videos";
+ 
 export function App() {
   return (
     <Routes>
