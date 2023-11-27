@@ -13,6 +13,6 @@ export const categories = [
     "Codeing",
     "Softwere Enigers one day of life",
     "Backend Web Development"
-]
+];
 
 

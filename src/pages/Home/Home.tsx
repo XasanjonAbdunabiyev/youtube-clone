@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 
-import { videos } from "../../data/homepage-vidoes/vidoes"
-import { Layout } from "../../layouts/Layout"
+import { useSelectCategory } from "@/hooks/useCategory";
+import { IVidoesProps } from "@/types/home";
+import { FilteredVidoes } from "@/components/FilteredVidoes";
+import { Empty } from "@/components/Empty";
+import { videos } from "@/data/homepage-vidoes/vidoes";
+import { Layout } from "@/layouts/Layout";
 
 
-import { IVidoesProps } from "../../types/home";
-import { useSelectCategory } from "../../hooks/useCategory";
-import { FilteredVidoes } from "../../components/FilteredVidoes";
-import { Empty } from "../../components/Empty";
 
 export function Home() {
     const { calegory } = useSelectCategory();

@@ -17,7 +17,7 @@ type CategoryPillProps = {
 const TRANSLATE_AMOUNT = 200;
 
 export function CategoryPills({ categories, selectedCategory, onSelect }: CategoryPillProps) {
-    const [translate, setTranslate] = useState(0);
+    const [translate, setTranslate] = useState(-400);
     const [isLeftVisible, setIsLeftVisible] = useState(true);
     const [isRightVisible, setIsRightVisible] = useState(true);
 
