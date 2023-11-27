@@ -7,7 +7,7 @@ import { Empty } from "@/components/Empty";
 import { videos } from "@/data/homepage-vidoes/vidoes";
 import { Layout } from "@/layouts/Layout";
 
-
+import { getVideosByCategory } from "@/services"
 
 export function Home() {
     const { calegory } = useSelectCategory();
@@ -15,21 +15,15 @@ export function Home() {
     const [notCategory, setNotCategory] = useState(false);
 
     useEffect(() => {
-        const filteredCategiries = videos.filter((vidoe) => {
-            if (vidoe.category.includes(calegory.toLowerCase())) {
-                return vidoe;
-            }
-        });
+        const filteredCategiries = getVideosByCategory(calegory)
         if (filteredCategiries.length <= 0) {
             setNotCategory(true);
             setFiltedCategories([])
         } else {
             setNotCategory(false);
         }
-
         setFiltedCategories(filteredCategiries)
     }, [calegory, filteredCategories.length]);
-
 
 
     return (

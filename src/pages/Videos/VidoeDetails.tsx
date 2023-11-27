@@ -1,11 +1,9 @@
-import { useParams } from "react-router-dom"
-
-import { Layout } from "../../layouts/Layout";
-
 import { useEffect } from "react";
 
-import { getVidoeDetails } from "../../services"
-import { VidoeList } from "../../components/VidoeList";
+import { getVidoeDetails } from "@/services";
+import { useParams } from "react-router-dom";
+import { VidoeList } from "@/components/VidoeList";
+import { Layout } from "@/layouts/Layout";
 
 export function VidoeDetails() {
     const { id } = useParams();
