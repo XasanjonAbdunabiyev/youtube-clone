@@ -15,7 +15,6 @@ export const videos = [
     thumbnailUrl: "https://i.ytimg.com/vi/uLY1SoqOcZM/hqdefault.jpg",
     iframeUrl: "https://www.youtube.com/embed/uLY1SoqOcZM?si=ff6YC6dBhrf8M9Ah",
   },
-
   {
     id: "2",
     title: "Xcho I can Fly Sped up",
@@ -66,7 +65,6 @@ export const videos = [
       "https://worksolutions.ru/uploads/e_Ho_Bd_M_Bva_U2_CU_03eh3_GWP_8_Ko_I_Wd9s_Nd5f19_T_Rd5t_80b2f09eaa.png",
     iframeUrl: "https://www.youtube.com/embed/tfn-59fbNMQ?si=rhLNY9eufWR6SWJs",
   },
-
   {
     id: "5",
     title:
@@ -85,8 +83,6 @@ export const videos = [
       "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-8/couple-hiking-mountain-climbing-1296x728-header.jpg?w=1155&h=1528",
     iframeUrl: "https://www.youtube.com/embed/tKgp-h4t4O0?si=rnUKDH1lDVNT-p0s",
   },
-
-  
   {
     id: "6",
     title:
@@ -104,5 +100,41 @@ export const videos = [
     thumbnailUrl:
       "https://miro.medium.com/v2/resize:fit:1400/1*moJeTvW97yShLB7URRj5Kg.png",
     iframeUrl: "https://www.youtube.com/embed/PYWaUwjofJo?si=01RnZcyeyDFIjLm-",
+  },
+  {
+    id: "7",
+    title:
+      "JavaScript Full Course for free 🌐",
+    channel: {
+      name: "Bro Code",
+      id: "BroCode",
+      profileUrl:
+        "https://yt3.googleusercontent.com/ytc/APkrFKajeJQEU3SzSyfbXlLyAmQu03lss6eNW79LdrcyDQ=s176-c-k-c0x00ffffff-no-rj",
+    },
+    category: "javascript",
+    postedAt: new Date("2023-10-05"),
+    duration: 4000 * 7.2,
+    views: 1.4,
+    thumbnailUrl:
+      "https://img-c.udemycdn.com/course/750x422/3561411_d620_3.jpg",
+    iframeUrl: "https://www.youtube.com/embed/8dWL3wF_OMw?si=AHuwjByDI_TrOG68",
+  },
+  {
+    id: "8",
+    title:
+      "Modern JavaScript From The Beginning | First 12 Hours",
+    channel: {
+      name: "Traversy Media",
+      id: "TraversyMedia",
+      profileUrl:
+        "https://yt3.googleusercontent.com/ytc/APkrFKYcYswt_UhD7D0j6ddiQz6Gb8Q_vSJOjhYI0CoXSw=s176-c-k-c0x00ffffff-no-rj",
+    },
+    category: "javascript",
+    postedAt: new Date("2023-10-05"),
+    duration: 4000 * 10.81,
+    views: 320,
+    thumbnailUrl:
+      "https://i.ytimg.com/vi/BI1o2H9z9fo/maxresdefault.jpg",
+    iframeUrl: "https://www.youtube.com/embed/BI1o2H9z9fo?si=YnFAyZBqUpsF4TTo",
   },
 ];

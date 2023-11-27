@@ -6,8 +6,13 @@ export const getVidoeDetails = (id: string) => {
 };
 
 export const getVideosByCategory = (category: string) => {
-  const filteredCategory = videos.filter(
-    (video) => video.category.toLowerCase() == category.toLowerCase()
-  );
+  const filteredCategory = videos.filter((video) => {
+    const videoCategory = video.category.toLowerCase();
+    if (videoCategory === category.toLowerCase()) {
+      return video;
+    } else if (category.toLowerCase() === "all") {
+      return video;
+    }
+  });
   return filteredCategory;
 };

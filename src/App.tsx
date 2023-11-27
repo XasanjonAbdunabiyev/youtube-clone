@@ -6,7 +6,12 @@ export function App() {
   return (
     <Routes>
       {routes?.map((page) => {
-        return (<Route element={<page.element />} path={page.path} />)
+        return (
+          <Route
+            key={page.path}
+            element={<page.element />}
+            path={page.path}
+          />)
       })}
     </Routes>
   )

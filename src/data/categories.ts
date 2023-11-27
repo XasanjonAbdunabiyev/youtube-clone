@@ -1,8 +1,8 @@
 export const categories = [
-    "All",
     "Javascript",
     "Typescript", 
     "Horror",
+    "All",
     "React",
     "Programming",
     "Hiking",

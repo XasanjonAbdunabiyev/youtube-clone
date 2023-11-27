@@ -43,6 +43,7 @@ export function VideoGridItem({
                 {vidoeRow === "automatic" &&
                     <img
                         src={thumbnailUrl}
+                        loading="lazy"
                         className={`block w-full h-[300px] max-[500px]:h-[200px] object-cover transition-[border-radius] duration-200 
                         ${isVideoPlaying ? "rounded-none" : "rounded-xl"}`}
                     />
