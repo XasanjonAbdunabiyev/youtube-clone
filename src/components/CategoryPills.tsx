@@ -5,6 +5,7 @@ import { Button } from "./Button";
 import {
     useState, useRef, useEffect,
 } from "react";
+import { useSelectCategory } from "../hooks/useCategory";
 
 
 type CategoryPillProps = {
@@ -12,7 +13,6 @@ type CategoryPillProps = {
     selectedCategory: string;
     onSelect: (calegory: string) => void
 }
-
 
 const TRANSLATE_AMOUNT = 200;
 
@@ -23,8 +23,7 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
 
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // const changeCategoryFunc = useContext(CategoryPillsContext)
-
+    const { changeCategory } = useSelectCategory()
     useEffect(() => {
         if (containerRef.current == null) return;
 
@@ -46,14 +45,15 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
         <div ref={containerRef} className="overflow-x-hidden relative">
             <div
                 className="flex whitespace-nowrap gap-3 transition-transform w-[max-content] max-[455px]:text-[13px]" style={{ transform: `translateX(-${translate}px)` }}>
-                {categories.map(category => (
-                    <Button variant={selectedCategory === category ? "dark" : "default"}
-                        key={category}
+                {categories.map(categ => (
+                    <Button variant={selectedCategory == categ ? "dark" : "default"}
+                        key={categ}
                         onClick={() => {
-                            onSelect(category)
+                            onSelect(categ)
+                            changeCategory(categ)
                         }}
                         className="py-1 px-3 rounded-lg whitespace-nowrap">
-                        {category}
+                        {categ}
                     </Button>
                 ))}
             </div>

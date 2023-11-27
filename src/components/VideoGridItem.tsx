@@ -40,11 +40,13 @@ export function VideoGridItem({
             onMouseLeave={() => setIsVideoPlaying(false)}
         >
             <a href={`/watch/${id}`} className="relative aspect-video">
+                {vidoeRow === "single" && 
                 <img
-                    src={thumbnailUrl}
-                    className={`block w-full ${vidoeRow === "single" ? "h-[500px]" : "h-[300px] max-[500px]:h-[200px]"} object-cover transition-[border-radius] duration-200 ${isVideoPlaying ? "rounded-none" : "rounded-xl"
-                        }`}
-                />
+                src={thumbnailUrl}
+                className={`block w-full h-[300px] max-[500px]:h-[200px] object-cover transition-[border-radius] duration-200 ${isVideoPlaying ? "rounded-none" : "rounded-xl"
+            }`}
+            />
+        }
                 <div className="absolute bottom-1 right-1 bg-secondary-dark text-secondary text-sm px-0.5 rounded">
                     {formatDuration(duration)}
                 </div>
