@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 
 import { routes } from "@/routes/Routes";
 
+import { PrivateRoute } from "@/routes/private-route"
+
 export function App() {
   return (
     <Routes>
@@ -9,9 +11,15 @@ export function App() {
         return (
           <Route
             key={page.path}
-            element={<page.element />}
+            element={
+              page.private === true ?
+                <PrivateRoute>
+                  <page.element />
+                </PrivateRoute> : <page.element />
+            }
             path={page.path}
-          />)
+          />
+        )
       })}
     </Routes>
   )

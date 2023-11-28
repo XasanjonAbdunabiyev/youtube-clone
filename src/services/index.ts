@@ -1,3 +1,4 @@
+import { log } from "util";
 import { videos } from "../data/homepage-vidoes/vidoes";
 
 export const getVidoeDetails = (id: string) => {
@@ -16,3 +17,5 @@ export const getVideosByCategory = (category: string) => {
   });
   return filteredCategory;
 };
+
+
