@@ -23,7 +23,8 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
 
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const { changeCategory } = useSelectCategory()
+    const { changeCategory } = useSelectCategory();
+    
     useEffect(() => {
         if (containerRef.current == null) return;
 

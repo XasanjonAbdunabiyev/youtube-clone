@@ -6,7 +6,6 @@ interface FilteredVidoesProps {
 }
 
 export function FilteredVidoes({ filteredVidoes }: FilteredVidoesProps) {
-
     return (
         <>
             {filteredVidoes?.map((video) => {

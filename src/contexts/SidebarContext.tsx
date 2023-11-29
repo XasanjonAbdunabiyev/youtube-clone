@@ -40,26 +40,19 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
         return () => {
             window.removeEventListener("resize", handler)
         }
-    }, [])
+    }, []);
 
-    function isScreenSmall() {
-        return window.innerWidth < 1024
+
+    const isScreenSmall = () => window.innerWidth < 1024
+
+    const toggle = () => {
+        if (isScreenSmall()) setIsSmallOpen(s => !s)
+        else setIsLargeOpen(l => !l)
     }
 
-    function toggle() {
-        if (isScreenSmall()) {
-            setIsSmallOpen(s => !s)
-        } else {
-            setIsLargeOpen(l => !l)
-        }
-    }
-
-    function close() {
-        if (isScreenSmall()) {
-            setIsSmallOpen(false)
-        } else {
-            setIsLargeOpen(false)
-        }
+    const close = () => {
+        if (isScreenSmall()) setIsSmallOpen(false)
+        else  setIsLargeOpen(false)
     }
 
     return (
