@@ -137,4 +137,43 @@ export const videos = [
       "https://i.ytimg.com/vi/BI1o2H9z9fo/maxresdefault.jpg",
     iframeUrl: "https://www.youtube.com/embed/BI1o2H9z9fo?si=YnFAyZBqUpsF4TTo",
   },
+
+  {
+    id: "9",
+    title:
+      "React Course - Beginner's Tutorial for React JavaScript Library [2022]",
+    channel: {
+      name: "freeCodeCamp.org",
+      id: "freeCodeCamp.org",
+      profileUrl:
+        "https://yt3.googleusercontent.com/ytc/APkrFKaqca-xQcJtp1Pqv-APucCa0nToHYGPVT00YBGOSw=s176-c-k-c0x00ffffff-no-rj",
+    },
+    category: "react",
+    postedAt: new Date("2023-10-05"),
+    duration: 32,
+    views: 3.4,
+    thumbnailUrl:
+      "https://www.freecodecamp.org/news/content/images/2022/01/react2022.png",
+    iframeUrl: "https://www.youtube.com/embed/bMknfKXIFA8?si=8rAIIovgRJTSJ1Ao",
+  } ,
+
+
+  {
+    id: "10",
+    title:
+      "React Course For Beginners - Learn React in 8 Hours",
+    channel: {
+      name: "PedroTech",
+      id: "PedroTech",
+      profileUrl:
+        "https://yt3.googleusercontent.com/tLOaVyDRQq46qga99PFlP9b3PRcni8gBJepNOecsgIdADpxU10p6w0VD-fZ8VvtqeldN6IHYOj0=s176-c-k-c0x00ffffff-no-rj",
+    },
+    category: "react",
+    postedAt: new Date("2023-10-05"),
+    duration: 32,
+    views: 3.4,
+    thumbnailUrl:
+      "https://i.ytimg.com/vi/RVFAyFWO4go/maxresdefault.jpg",
+    iframeUrl: "https://www.youtube.com/embed/f55qeKGgB_M?si=J6GRr-7R8r2G2j38",
+  }
 ];

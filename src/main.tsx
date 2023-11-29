@@ -9,14 +9,18 @@ import { CategoryPillsProvider } from "./contexts/CategoryPillsContext.tsx"
 import { BrowserRouter } from "react-router-dom";
 import { SidebarProvider } from './contexts/SidebarContext.tsx';
 
+import { UserContextProvider } from "@/contexts/UserContext.tsx"
+
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <CategoryPillsProvider>
-        <SidebarProvider>
-          <App />
-        </SidebarProvider>
+        <UserContextProvider>
+          <SidebarProvider>
+            <App />
+          </SidebarProvider>
+        </UserContextProvider>
       </CategoryPillsProvider>
     </QueryClientProvider>
   </BrowserRouter>,

@@ -5,27 +5,25 @@ import {
   Home,
   PlaySquare,
   Repeat,
-  ListVideo
 } from "lucide-react";
 
 import { Children, ElementType, ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useSidebarContext } from "../contexts/SidebarContext";
-import { playlists, subscriptions } from "../data/sidebar";
+import {  subscriptions } from "../data/sidebar";
 import { Button, buttonStyles } from "../components/Button";
 import { SmallSidebarItem } from "./SmallSidebarItem/SmallSidebarItem";
 import { PageHeaderFirstSection } from "./PageHeaderFirstSection";
 
 export function Sidebar() {
   const { isLargeOpen, isSmallOpen, close } = useSidebarContext();
-
   return (
     <>
       <aside
         className={`sticky top-0 overflow-y-auto  pb-4 flex flex-col ml-1 ${isLargeOpen ? "lg:hidden" : "lg:flex"
           }`}
       >
-        <SmallSidebarItem Icon={Home} title="Home" url="/" />
+        <SmallSidebarItem Icon={Home} title="Home" url="/"   />
         <SmallSidebarItem Icon={Repeat} title="Shorts" url="/shorts" />
         <SmallSidebarItem
           Icon={Clapperboard}
@@ -62,14 +60,6 @@ export function Sidebar() {
             title="Your Videos"
             url="/dashboard"
           />
-          {playlists.map((playlist) => (
-            <LargeSidebarItem
-              key={playlist.id}
-              IconOrImgUrl={ListVideo}
-              title={playlist.name}
-              url={`/playlist?list=${playlist.id}`}
-            />
-          ))}
         </LargeSidebarSection>
         <hr />
         <LargeSidebarSection title="Subscriptions">
