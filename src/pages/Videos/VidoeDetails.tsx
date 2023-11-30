@@ -30,9 +30,9 @@ export function VidoeDetails() {
     return (
         <section className="vidoe-details">
             <Layout showCategries={false}>
-                <Button onClick={() => navigate(-1)} variant="default" className="w-max px-10 my-2 font-bold flex gap-5 items-center">
+                <Button onClick={() => navigate(-1)} variant="default" className="w-max px-10 my-2 font-bold bg-gray-400  flex gap-2 items-center">
                     <ArrowLeftCircle />
-                    Back
+                    Back to home page
                 </Button>
                 <VidoeList vidoeRow="single" videos={video} />
                 <div className="my-3">

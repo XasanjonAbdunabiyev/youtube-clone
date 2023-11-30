@@ -31,7 +31,9 @@ export function Layout({ children, showCategries = true }: LayoutProps) {
                                         categories={categories} />
                                 </div>
                             )}
-                            {children}
+                            <div className="rounded-md bg-gray-200 p-6 mx-4">
+                                {children}
+                            </div>
                         </div>
                     </div>
                 </div>

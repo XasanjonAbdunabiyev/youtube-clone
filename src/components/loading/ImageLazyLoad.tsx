@@ -34,7 +34,9 @@ export const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl, alt = 'y
         <div
             className={`relative ${loaded ? 'filter-none' : 'filter-blur-md'}`}
         >
-            <img src={imageUrl} alt={alt} {...props} className={`w-full ${props.props?.className} ${loaded ? "blur-sm" : "blur-none"}  h-full`} />
+            <img src={imageUrl}
+                loading='lazy'
+                alt={alt} {...props} className={`${props.props?.className} ${loaded ? "blur-sm" : "blur-none"}`} />
         </div>
     );
 };

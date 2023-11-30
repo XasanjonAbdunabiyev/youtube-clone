@@ -20,7 +20,7 @@ export function Sidebar() {
   return (
     <>
       <aside
-        className={`sticky top-0 overflow-y-auto  pb-4 flex flex-col ml-1 ${isLargeOpen ? "lg:hidden" : "lg:flex"
+        className={`sticky top-0 overflow-y-auto h-full  pb-4 flex flex-col ml-1 ${isLargeOpen ? "lg:hidden" : "lg:flex"
           }`}
       >
         <SmallSidebarItem Icon={Home} title="Home" url="/"   />

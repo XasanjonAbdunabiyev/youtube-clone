@@ -3,6 +3,7 @@ import { formatDuration } from "../utils/formatDuration"
 import { formatTimeAgo } from "../utils/formatTimeAgo"
 
 import { ImageLazyLoad } from "./Loading/ImageLazyLoad";
+import { Button } from "./Button";
 
 export type VideoGridItemProps = {
     id: string
@@ -43,34 +44,32 @@ export function VideoGridItem({
                 onMouseLeave={() => setIsVideoPlaying(false)}
             >
 
-                <a href={`/watch/${id}`} className="relative aspect-video">
-                    {vidoeRow === "automatic" &&
-                        <ImageLazyLoad
-                            imageUrl={thumbnailUrl}
-                            props={
-                                {
-                                    className: `block w-full h-[300px] max-[500px]:h-[200px] object-cover transition-[border-radius] duration-200 
+                {vidoeRow === "automatic" &&
+                    <ImageLazyLoad
+                        imageUrl={thumbnailUrl}
+                        props={
+                            {
+                                className: `block w-full h-[300px] max-[500px]:h-[200px] object-cover transition-[border-radius] duration-200 
                                     ${isVideoPlaying ? "rounded-none" : "rounded-xl"}`
-                                }
                             }
-                        />
-                    }
+                        }
+                    />
+                }
 
-                    {vidoeRow === "single" &&
-                        <iframe
-                            width={"100%"}
-                            height={"100%"}
-                            frameBorder={0}
-                            loading="lazy"
-                            title="YouTube video player"
-                            allowFullScreen
-                            src={iframeUrl}
-                        />
-                    }
-                    <div className="absolute bottom-1 right-1 bg-secondary-dark text-secondary text-sm px-0.5 rounded">
-                        {formatDuration(duration)}
-                    </div>
-                </a>
+                {vidoeRow === "single" &&
+                    <iframe
+                        width={"100%"}
+                        height={"100%"}
+                        frameBorder={0}
+                        loading="lazy"
+                        title="YouTube video player"
+                        allowFullScreen
+                        src={iframeUrl}
+                    />
+                }
+                <div className="absolute bottom-1 right-1 bg-secondary-dark text-secondary text-sm px-0.5 rounded">
+                    {formatDuration(duration)}
+                </div>
 
                 <div className="flex gap-2">
                     <a href={`/watch/${channel.id}`} className="flex-shrink-0">
@@ -85,6 +84,10 @@ export function VideoGridItem({
                         </div>
                     </div>
                 </div>
+
+                {vidoeRow === "automatic" && (
+                    <Button variant="default" className="font-extrabold bg-slate-400 text-gray-800">Watch More</Button>
+                )}
             </div>
 
         </>
