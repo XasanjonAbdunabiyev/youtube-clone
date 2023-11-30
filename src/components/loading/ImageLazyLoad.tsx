@@ -1,23 +1,41 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import React, { useState, useEffect } from 'react';
 
-import { FC } from "react";
-
-declare module "*.jpg";
-declare module "*.png";
-
-type ImageProps = {
+interface LazyLoadImageProps {
     imageUrl: string;
+    alt?: string;
+    props?: React.ImgHTMLAttributes<HTMLImageElement>;
 }
 
-export const ImageLazyLoad: FC<ImageProps> = ({ imageUrl, ...props }: ImageProps): JSX.Element => {
+export const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl, alt = 'youtube-images', ...props }) => {
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        const image = new Image();
+        image.src = imageUrl;
+
+        image.onload = () => {
+            setLoaded(true);
+        };
+
+        const timeout = setTimeout(() => {
+            setLoaded(false)
+        }, 3000);
+
+        return () => {
+            clearTimeout(timeout)
+            image.onload = null; // O'nchirish
+        };
+    }, [imageUrl]);
+
+    console.log();
+
+
     return (
-        <LazyLoadImage
-            {...props}
-            alt="loadng-image"
-            height="100%"
-            width="100%"
-            effect='blur'
-            src={imageUrl}
-        />
-    )
-}
+        <div
+            className={`relative ${loaded ? 'filter-none' : 'filter-blur-md'}`}
+        >
+            <img src={imageUrl} alt={alt} {...props} className={`w-full ${props.props?.className} ${loaded ? "blur-sm" : "blur-none"}  h-full`} />
+        </div>
+    );
+};
+

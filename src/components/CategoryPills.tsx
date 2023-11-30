@@ -5,7 +5,7 @@ import { Button } from "./Button";
 import {
     useState, useRef, useEffect,
 } from "react";
-import { useSelectCategory } from "../hooks/useCategory";
+import { useSelectCategory } from "@/hooks/useCategory";
 
 
 type CategoryPillProps = {
@@ -43,9 +43,9 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
     }, [categories, translate]);
 
     return (
-        <div ref={containerRef} className="overflow-x-hidden relative">
+        <div ref={containerRef} className="overflow-x-hidden relative w-full">
             <div
-                className="flex whitespace-nowrap gap-3 transition-transform w-[max-content] max-[455px]:text-[13px]" style={{ transform: `translateX(-${translate}px)` }}>
+                className="flex whitespace-nowrap gap-3 transition-transform w-full max-[455px]:text-[13px]" style={{ transform: `translateX(-${translate}px)`}}>
                 {categories.map(categ => (
                     <Button variant={selectedCategory == categ ? "dark" : "default"}
                         key={categ}
