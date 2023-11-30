@@ -2,8 +2,9 @@ import { useState } from "react"
 import { formatDuration } from "../utils/formatDuration"
 import { formatTimeAgo } from "../utils/formatTimeAgo"
 
-import { ImageLazyLoad } from "./Loading/ImageLazyLoad";
 import { Button } from "./Button";
+import { ImageLazyLoad } from "./Loading/ImageLazyLoad";
+import { useNavigate } from "react-router-dom";
 
 export type VideoGridItemProps = {
     id: string
@@ -35,7 +36,8 @@ export function VideoGridItem({
     thumbnailUrl,
     iframeUrl,
 }: VideoGridItemProps) {
-    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const navigate = useNavigate();
     return (
         <>
             <div
@@ -86,7 +88,7 @@ export function VideoGridItem({
                 </div>
 
                 {vidoeRow === "automatic" && (
-                    <Button variant="default" className="font-extrabold bg-slate-400 text-gray-800">Watch More</Button>
+                    <Button variant="default" onClick={() => navigate(`/watch/${id}`)} className="font-extrabold bg-slate-400 text-gray-800">Watch More</Button>
                 )}
             </div>
 
