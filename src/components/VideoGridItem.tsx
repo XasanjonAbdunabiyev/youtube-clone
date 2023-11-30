@@ -2,9 +2,10 @@ import { useState } from "react"
 import { formatDuration } from "../utils/formatDuration"
 import { formatTimeAgo } from "../utils/formatTimeAgo"
 
+
 import { Button } from "./Button";
-import { ImageLazyLoad } from "./Loading/ImageLazyLoad";
 import { useNavigate } from "react-router-dom";
+import ImageLazyLoad from "./Loading/ImageLazyLoad";
 
 export type VideoGridItemProps = {
     id: string
@@ -52,7 +53,8 @@ export function VideoGridItem({
                         props={
                             {
                                 className: `block w-full h-[300px] max-[500px]:h-[200px] object-cover transition-[border-radius] duration-200 
-                                    ${isVideoPlaying ? "rounded-none" : "rounded-xl"}`
+                                    ${isVideoPlaying ? "rounded-none" : "rounded-xl"}`,
+
                             }
                         }
                     />
