@@ -1,13 +1,21 @@
 import { provider, auth } from "@/firebase/config";
 
 import { signInWithPopup } from "firebase/auth"
+import { useNavigate } from "react-router-dom";
 
 export function GoogleButton() {
+    const navigate = useNavigate();
     const GooglePopup = () => {
         signInWithPopup(auth, provider)
             .then((data) => {
-                console.log("uspeshno");
-                localStorage.setItem("token", data?.user?.email!)
+                const name = data?.user?.displayName;
+                const photoUrl = data?.user?.photoURL;
+                const email = data?.user?.email;
+
+                localStorage.setItem("token", data?.user?.refreshToken!);
+                localStorage.setItem("user", JSON.stringify({ name: name, email: email, photoUrl: photoUrl }));
+
+                navigate("/dashboard");
             })
             .catch((error) => {
                 console.log(error);
