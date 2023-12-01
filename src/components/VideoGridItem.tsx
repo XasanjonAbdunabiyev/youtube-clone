@@ -50,13 +50,10 @@ export function VideoGridItem({
                 {vidoeRow === "automatic" &&
                     <ImageLazyLoad
                         imageUrl={thumbnailUrl}
-                        props={
-                            {
-                                className: `block w-full h-[300px] max-[500px]:h-[200px] object-cover transition-[border-radius] duration-200 
-                                    ${isVideoPlaying ? "rounded-none" : "rounded-xl"}`,
-
-                            }
-                        }
+                        props={{
+                            className: `block w-full h-[300px] max-[500px]:h-[200px] object-cover transition-[border-radius] duration-200 ${isVideoPlaying ? "rounded-none" : "rounded-xl"}
+                        ${isVideoPlaying ? "rounded-none" : "rounded-xl"}`
+                        }}
                     />
                 }
 

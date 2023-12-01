@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ImgHTMLAttributes } from 'react';
 
 interface LazyLoadImageProps {
     imageUrl: string;
     alt?: string;
-    props?: React.ImgHTMLAttributes<HTMLImageElement>;
+    props: ImgHTMLAttributes<HTMLImageElement> 
 }
 
 const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl, alt = 'youtube-images', ...props }) => {
@@ -23,7 +23,7 @@ const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl, alt = 'youtube-
 
         return () => {
             clearTimeout(timeout)
-            image.onload = null; // O'nchirish
+            image.onload = null;
         };
     }, [imageUrl]);
 
@@ -34,9 +34,13 @@ const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl, alt = 'youtube-
         <div
             className={`relative ${loaded ? 'filter-none' : 'filter-blur-md'}`}
         >
-            <img src={imageUrl}
+            <img 
+                src={imageUrl}
                 loading='lazy'
-                alt={alt} {...props} className={`${props.props?.className} ${loaded ? "blur-sm" : "blur-none"}`} />
+                alt={alt}
+                {...props}
+                className={`${loaded ? "blur-sm" : "blur-none"}`} 
+            />
         </div>
     );
 };
