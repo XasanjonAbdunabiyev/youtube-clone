@@ -3,10 +3,13 @@ import React, { useState, useEffect, ImgHTMLAttributes } from 'react';
 interface LazyLoadImageProps {
     imageUrl: string;
     alt?: string;
-    props: ImgHTMLAttributes<HTMLImageElement> 
+    className: string;
+    readonly props?: ImgHTMLAttributes<HTMLImageElement>
 }
 
-const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl, alt = 'youtube-images', ...props }) => {
+const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl,
+    className,
+    alt = 'youtube-images', ...props }) => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
@@ -34,12 +37,12 @@ const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl, alt = 'youtube-
         <div
             className={`relative ${loaded ? 'filter-none' : 'filter-blur-md'}`}
         >
-            <img 
+            <img
                 src={imageUrl}
                 loading='lazy'
                 alt={alt}
                 {...props}
-                className={`${loaded ? "blur-sm" : "blur-none"}`} 
+                className={`${className} ${loaded ? "blur-sm" : "blur-none"}`}
             />
         </div>
     );
