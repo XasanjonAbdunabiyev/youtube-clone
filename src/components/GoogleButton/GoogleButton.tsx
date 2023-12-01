@@ -14,7 +14,6 @@ export function GoogleButton() {
 
                 localStorage.setItem("token", data?.user?.refreshToken!);
                 localStorage.setItem("user", JSON.stringify({ name: name, email: email, photoUrl: photoUrl }));
-
                 navigate("/dashboard");
             })
             .catch((error) => {
