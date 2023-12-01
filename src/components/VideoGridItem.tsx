@@ -5,7 +5,6 @@ import { formatTimeAgo } from "../utils/formatTimeAgo"
 
 import { Button } from "./Button";
 import { useNavigate } from "react-router-dom";
-import ImageLazyLoad from "./Loading/ImageLazyLoad";
 
 export type VideoGridItemProps = {
     id: string
@@ -48,8 +47,8 @@ export function VideoGridItem({
             >
 
                 {vidoeRow === "automatic" &&
-                    <ImageLazyLoad
-                        imageUrl={thumbnailUrl}
+                    <img
+                        src={thumbnailUrl}
                         className={`block w-full h-[300px] max-[500px]:h-[200px] object-cover transition-[border-radius] duration-200 ${isVideoPlaying ? "rounded-none" : "rounded-xl"}
                         ${isVideoPlaying ? "rounded-none" : "rounded-xl"}`} />
                 }
