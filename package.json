@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "rollup": "4.6.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tanstack/react-query": "^5.8.4",
     "axios": "^1.6.2",
