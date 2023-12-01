@@ -10,6 +10,8 @@ import { Layout } from "@/layouts/Layout";
 import { getVideosByCategory } from "@/services"
 
 export function Home() {
+    console.log(import.meta.env);
+        
     const { calegory } = useSelectCategory();
     const [filteredCategories, setFiltedCategories] = useState<IVidoesProps[] & typeof videos>([]);
     const [notCategory, setNotCategory] = useState(false);
