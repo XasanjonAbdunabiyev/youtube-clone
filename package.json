@@ -11,11 +11,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@tailwindcss/forms": "^0.5.7",
     "@tanstack/react-query": "^5.8.4",
     "axios": "^1.6.2",
     "class-variance-authority": "^0.7.0",
     "firebase": "^10.7.0",
+    "framer-motion": "^10.16.12",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.293.0",
     "react": "^18.0.0",

@@ -2,9 +2,12 @@ import { ArrowLeft, Bell, Mic, Search, Upload, User } from "lucide-react";
 import { Button } from "../components/Button";
 import { useState } from "react";
 import { PageHeaderFirstSection } from "./PageHeaderFirstSection";
+import { Dropdown } from "@/components/Dropdown"
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
+
+  const user = localStorage.getItem("user");
 
   return (
     <div className="flex gap-10 lg:gap-20 justify-between p-4 mb-6 mx-4">
@@ -59,9 +62,12 @@ export function PageHeader() {
         <Button size="icon" variant="ghost">
           <Bell />
         </Button>
-        <Button size="icon" variant="ghost">
+
+        {user ? (
+          <Dropdown />
+        ) : <Button size="icon" variant="ghost">
           <User />
-        </Button>
+        </Button>}
       </div>
     </div>
   );

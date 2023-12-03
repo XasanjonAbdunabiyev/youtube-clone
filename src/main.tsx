@@ -1,8 +1,8 @@
-import ReactDOM from 'react-dom/client'
+import * as ReactDOM from 'react-dom/client'
 import { App } from './App.tsx'
 import './index.css';
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 
 import { CategoryPillsProvider } from "./contexts/CategoryPillsContext.tsx"
 
@@ -11,10 +11,20 @@ import { SidebarProvider } from './contexts/SidebarContext.tsx';
 
 import { UserContextProvider } from "@/contexts/UserContext.tsx"
 
-const queryClient = new QueryClient();
+const colors = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  },
+}
+
+const theme = extendTheme({ colors })
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <QueryClientProvider client={queryClient}>
+    <ChakraProvider theme={theme}>
       <CategoryPillsProvider>
         <UserContextProvider>
           <SidebarProvider>
@@ -22,6 +32,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           </SidebarProvider>
         </UserContextProvider>
       </CategoryPillsProvider>
-    </QueryClientProvider>
+    </ChakraProvider>
   </BrowserRouter>,
 )
