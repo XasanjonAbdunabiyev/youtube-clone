@@ -10,7 +10,7 @@ import {
 import { Children, ElementType, ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useSidebarContext } from "../contexts/SidebarContext";
-import {  subscriptions } from "../data/sidebar";
+import { subscriptions } from "../data/sidebar";
 import { Button, buttonStyles } from "../components/Button";
 import { SmallSidebarItem } from "./SmallSidebarItem/SmallSidebarItem";
 import { PageHeaderFirstSection } from "./PageHeaderFirstSection";
@@ -23,13 +23,13 @@ export function Sidebar() {
         className={`sticky top-0 overflow-y-auto h-full  pb-4 flex flex-col ml-1 ${isLargeOpen ? "lg:hidden" : "lg:flex"
           }`}
       >
-        <SmallSidebarItem Icon={Home} title="Home" url="/"   />
-        <SmallSidebarItem Icon={Repeat} title="Shorts" url="/shorts" />
+        <SmallSidebarItem Icon={Home} title="Home" url="/" />
         <SmallSidebarItem
           Icon={Clapperboard}
           title="Subscriptions"
           url="/subscriptions"
         />
+        <SmallSidebarItem Icon={Repeat} title="Shorts" url="/shorts" />
       </aside>
       {isSmallOpen && (
         <div
@@ -46,6 +46,7 @@ export function Sidebar() {
         </div>
         <LargeSidebarSection>
           <LargeSidebarItem isActive IconOrImgUrl={Home} title="Home" url="/" />
+          <LargeSidebarItem isActive IconOrImgUrl={Repeat} title="Shorts" url="/shorts" />
           <LargeSidebarItem
             IconOrImgUrl={Clapperboard}
             title="Subscriptions"
@@ -54,7 +55,7 @@ export function Sidebar() {
         </LargeSidebarSection>
         <hr />
         <LargeSidebarSection visibleItemCount={5}>
-         
+
           <LargeSidebarItem
             IconOrImgUrl={PlaySquare}
             title="Your Videos"
