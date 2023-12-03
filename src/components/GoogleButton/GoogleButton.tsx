@@ -1,11 +1,9 @@
 import { provider, auth } from "@/firebase/config";
 
 import { signInWithPopup } from "firebase/auth"
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function GoogleButton() {
-    const user = localStorage.getItem("user");
     const navigate = useNavigate();
     const GooglePopup = () => {
         signInWithPopup(auth, provider)
