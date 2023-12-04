@@ -1,7 +1,7 @@
-import { GoogleButton } from "@/components/GoogleButton/GoogleButton";
+import { GoogleButton } from "@/components/Form/GoogleButton/GoogleButton";
 
 import logo from '@/assets/logo.png';
-import { LoginForm } from "@/components/LoginForm/LoginForm";
+import { LoginForm } from "@/components/Form/LoginForm/LoginForm";
 import loginImage from "@/assets/login-bg.jpg";
 import { Img } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";

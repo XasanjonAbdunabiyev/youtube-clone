@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 import { getVideosByCategory, getVidoeDetails } from "@/services";
 import { useNavigate, useParams } from "react-router-dom";
-import { VidoeList } from "@/components/VidoeList";
+import { VidoeList } from "@/components/Videos/VidoeList";
 import { Layout } from "@/layouts/Layout";
 import { ArrowLeftCircle } from "lucide-react";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/Button";
 import { IVidoesProps } from "@/types/home";
 import { useSelectCategory } from "@/hooks/useCategory";
 

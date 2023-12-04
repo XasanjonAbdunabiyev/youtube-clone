@@ -1,4 +1,4 @@
-import { videos } from "../data/homepage-vidoes/vidoes"
+import { videos } from "../../data/homepage-vidoes/vidoes"
 import { VideoGridItem } from "./VideoGridItem"
 
 interface VidoeListProps {

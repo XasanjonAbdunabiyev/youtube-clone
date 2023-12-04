@@ -9,10 +9,10 @@ import {
 
 import { Children, ElementType, ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { useSidebarContext } from "../contexts/SidebarContext";
-import { subscriptions } from "../data/sidebar";
-import { Button, buttonStyles } from "../components/Button";
-import { SmallSidebarItem } from "./SmallSidebarItem/SmallSidebarItem";
+import { useSidebarContext } from "../../contexts/SidebarContext";
+import { subscriptions } from "../../data/sidebar";
+import { Button, buttonStyles } from "../../components/ui/Button";
+import { SmallSidebarItem } from "./SmallSidebarItem";
 import { PageHeaderFirstSection } from "./PageHeaderFirstSection";
 
 export function Sidebar() {

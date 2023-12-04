@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge"
 
 import { ElementType } from "react";
-import { buttonStyles } from "../../components/Button";
+import { buttonStyles } from "../../components/ui/Button";
 
 type SmallSidebarItemProps = {
     Icon: ElementType

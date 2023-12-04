@@ -1,8 +1,8 @@
 import { ArrowLeft, Bell, Mic, Search, Upload, User } from "lucide-react";
-import { Button } from "../components/Button";
+import { Button } from "../../components/ui/Button";
 import { useState } from "react";
 import { PageHeaderFirstSection } from "./PageHeaderFirstSection";
-import { Dropdown } from "@/components/Dropdown"
+import { Dropdown } from "@/components/ui/Dropdown"
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);

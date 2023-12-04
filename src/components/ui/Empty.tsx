@@ -1,4 +1,4 @@
-import notResult from "../data/animation-lottie/not-found.json";
+import notResult from "../../data/animation-lottie/not-found.json";
 
 import Lottie from 'lottie-react';
 

@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react"
-import { Button } from "../Button"
-import TextField from "../CustomInput"
+import { Button } from "../../ui/Button"
+import { TextField } from "../CustomInput/TextField";
 
 export function LoginForm() {
     const [user, setUser] = useState<{ username: string, password: string }>({ password: '', username: "" });

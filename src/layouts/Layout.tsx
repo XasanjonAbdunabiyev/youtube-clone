@@ -1,10 +1,10 @@
 
 import { useState, ReactNode } from "react";
 import { categories } from "../data/categories";
-import { PageHeader } from "./PageHeader";
+import { PageHeader } from "./__layout__components/PageHeader";
 import { SidebarProvider } from "../contexts/SidebarContext";
-import { CategoryPills } from "../components/CategoryPills";
-import { Sidebar } from "./Sidebar";
+import { CategoryPills } from "../components/ui/CategoryPills";
+import { Sidebar } from "./__layout__components/Sidebar";
 import { useSelectCategory } from "../hooks/useCategory";
 interface LayoutProps {
     children: ReactNode;

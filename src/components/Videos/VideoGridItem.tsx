@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { formatDuration } from "../utils/formatDuration"
-import { formatTimeAgo } from "../utils/formatTimeAgo"
+import { formatDuration } from "../../utils/formatDuration"
+import { formatTimeAgo } from "../../utils/formatTimeAgo"
 
 
 export type VideoGridItemProps = {

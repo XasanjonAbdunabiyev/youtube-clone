@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 
 import { useSelectCategory } from "@/hooks/useCategory";
 import { IVidoesProps } from "@/types/home";
-import { FilteredVidoes } from "@/components/FilteredVidoes";
-import { Empty } from "@/components/Empty";
+import { FilteredVidoes } from "@/components/Videos/FilteredVidoes";
+import { Empty } from "@/components/ui/Empty";
 import { videos } from "@/data/homepage-vidoes/vidoes";
 import { Layout } from "@/layouts/Layout";
 

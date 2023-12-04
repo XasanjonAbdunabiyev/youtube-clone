@@ -1,4 +1,4 @@
-import { IVidoesProps } from "../types/home"
+import { IVidoesProps } from "../../types/home"
 import { VideoGridItem } from "./VideoGridItem"
 
 interface FilteredVidoesProps {

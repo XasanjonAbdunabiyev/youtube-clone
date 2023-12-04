@@ -2,7 +2,7 @@ import { Layout } from "@/layouts/Layout";
 
 import Modal from "@/components/Modal";
 import { useModal } from "@/hooks/useModal";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/Button";
 import {
     FormControl,
     FormLabel,

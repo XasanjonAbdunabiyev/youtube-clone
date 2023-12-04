@@ -1,6 +1,6 @@
 import { ReactNode, useState, createContext } from "react";
 
-import { VideoGridItemProps } from "../components/VideoGridItem";
+import { VideoGridItemProps } from "../components/Videos/VideoGridItem";
 
 type CategoryPillsContextType = {
     categoryType: string;
