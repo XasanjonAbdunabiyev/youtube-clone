@@ -1,10 +1,4 @@
-import Home from "@/pages/Home";
-import Shorts from "@/pages/Shorts";
-import Subscriptions from "@/pages/Subscriptions";
-import VidoeDetails from "@/pages/Videos";
-import Dashboard from "@/pages/Dashboard";
-import { Login } from "@/pages/Auth/Login";
-
+import { Dashboard, Login, Shorts, Subscriptions, VidoeDetails, Home } from "@/pages"
 
 export const routes = [
     {
@@ -12,7 +6,7 @@ export const routes = [
         element: Home,
     },
     {
-        path: "/login", 
+        path: "/login",
         element: Login
     },
     {
@@ -29,7 +23,7 @@ export const routes = [
     },
     {
         path: "/dashboard",
-        element: Dashboard, 
+        element: Dashboard,
         private: true
     }
 ]

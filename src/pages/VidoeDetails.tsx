@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { IVidoesProps } from "@/types/home";
 import { useSelectCategory } from "@/hooks/useCategory";
 
-export function VidoeDetails() {
+export default function VidoeDetails() {
     const { id } = useParams();
     const { calegory } = useSelectCategory();
 

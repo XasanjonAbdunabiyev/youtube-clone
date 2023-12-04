@@ -2,7 +2,7 @@ import { Menu } from "lucide-react";
 import { Button } from "../../components/ui/Button";
 import { useSidebarContext } from "../../contexts/SidebarContext";
 
-import logo from "../assets/logo.png";
+import logo from "@/assets/logo.png"
 
 type PageHeaderFirstSectionProps = {
     hidden?: boolean;

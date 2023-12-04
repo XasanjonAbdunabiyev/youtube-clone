@@ -1,6 +1,6 @@
-import { Layout } from "../../layouts/Layout";
+import { Layout } from "../layouts/Layout";
 
-export function Shorts() {
+export default function Shorts() {
     return (
         <section className="shorts">
             <Layout showCategries={false}>

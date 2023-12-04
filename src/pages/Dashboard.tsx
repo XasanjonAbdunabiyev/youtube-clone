@@ -1,24 +1,22 @@
 import { Layout } from "@/layouts/Layout";
 
-import Modal from "@/components/Modal";
 import { useModal } from "@/hooks/useModal";
-import { Button } from "@/components/ui/Button";
 import {
     FormControl,
     FormLabel,
-    FormErrorMessage,
-    FormHelperText,
     Textarea,
 } from '@chakra-ui/react'
 
 import { useForm, SubmitHandler } from "react-hook-form"
+import { Button } from "@/components/ui/Button";
+import { Modal } from "@/components/ui/Modal";
 
 type Inputs = {
     title: string
     description: string
 }
 
-export function Dashboard() {
+export default function Dashboard() {
     const {
         register,
         handleSubmit,

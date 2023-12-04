@@ -1,7 +1,6 @@
-import { Layout } from "../../layouts/Layout";
+import { Layout } from "@/layouts/Layout";
 
-
-export function Subscriptions() {
+export default function Subscriptions() {
     return (
         <section className="subscriptions">
             <Layout showCategries={false}>

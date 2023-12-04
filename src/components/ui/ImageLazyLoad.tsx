@@ -7,7 +7,7 @@ interface LazyLoadImageProps {
     readonly props?: ImgHTMLAttributes<HTMLImageElement>
 }
 
-const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl,
+export const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl,
     className,
     alt = 'youtube-images', ...props }) => {
     const [loaded, setLoaded] = useState(false);
@@ -47,5 +47,3 @@ const ImageLazyLoad: React.FC<LazyLoadImageProps> = ({ imageUrl,
         </div>
     );
 };
-
-export default ImageLazyLoad
