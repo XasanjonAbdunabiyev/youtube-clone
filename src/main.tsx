@@ -24,14 +24,14 @@ const theme = extendTheme({ colors })
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <ChakraProvider theme={theme}>
-      <CategoryPillsProvider>
-        <UserContextProvider>
-          <SidebarProvider>
+    <CategoryPillsProvider>
+      <UserContextProvider>
+        <SidebarProvider>
+          <ChakraProvider theme={theme}>
             <App />
-          </SidebarProvider>
-        </UserContextProvider>
-      </CategoryPillsProvider>
-    </ChakraProvider>
+          </ChakraProvider>
+        </SidebarProvider>
+      </UserContextProvider>
+    </CategoryPillsProvider>
   </BrowserRouter>,
 )
