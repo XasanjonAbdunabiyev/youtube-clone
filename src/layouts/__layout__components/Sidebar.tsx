@@ -68,7 +68,7 @@ export function Sidebar() {
               key={subscription.id}
               IconOrImgUrl={subscription.imgUrl}
               title={subscription.channelName}
-              url={`/subscriptions/?=subscripe${subscription.id}`}
+              url={`/subscriptions?subscripe=${subscription.id}`}
             />
           ))}
         </LargeSidebarSection>
