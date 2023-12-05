@@ -1,5 +1,9 @@
 Youtube clone using react-typescript
 
+There are several updates on the site
+For example, Subscriptions, Google Aftarization, Video filtering, Video details
+
+
 ![Alt text](screen.png)
 
 
