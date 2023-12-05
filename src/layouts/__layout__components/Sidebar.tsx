@@ -23,10 +23,10 @@ export function Sidebar() {
         className={`sticky top-0 overflow-y-auto h-full  pb-4 flex flex-col ml-1 ${isLargeOpen ? "lg:hidden" : "lg:flex"
           }`}
       >
-        <SmallSidebarItem Icon={Home} title="Home" url="/" />
+        <SmallSidebarItem Icon={Home} title="Главная страница" url="/" />
         <SmallSidebarItem
           Icon={Clapperboard}
-          title="Subscriptions"
+          title="Подписки"
           url="/subscriptions"
         />
         <SmallSidebarItem Icon={Repeat} title="Shorts" url="/shorts" />
@@ -45,31 +45,30 @@ export function Sidebar() {
           <PageHeaderFirstSection />
         </div>
         <LargeSidebarSection>
-          <LargeSidebarItem isActive IconOrImgUrl={Home} title="Home" url="/" />
+          <LargeSidebarItem isActive IconOrImgUrl={Home} title="Главная страница" url="/" />
           <LargeSidebarItem isActive IconOrImgUrl={Repeat} title="Shorts" url="/shorts" />
           <LargeSidebarItem
             IconOrImgUrl={Clapperboard}
-            title="Subscriptions"
+            title="Подписки"
             url="/subscriptions"
           />
         </LargeSidebarSection>
         <hr />
         <LargeSidebarSection visibleItemCount={5}>
-
           <LargeSidebarItem
             IconOrImgUrl={PlaySquare}
-            title="Your Videos"
+            title="Мой канал"
             url="/dashboard"
           />
         </LargeSidebarSection>
         <hr />
-        <LargeSidebarSection title="Subscriptions">
+        <LargeSidebarSection title="Подписки">
           {subscriptions.map((subscription) => (
             <LargeSidebarItem
               key={subscription.id}
               IconOrImgUrl={subscription.imgUrl}
               title={subscription.channelName}
-              url={`/@${subscription.id}`}
+              url={`/subscriptions/?=subscripe${subscription.id}`}
             />
           ))}
         </LargeSidebarSection>
@@ -133,7 +132,7 @@ function LargeSidebarItem({
       href={url}
       className={twMerge(
         buttonStyles({ variant: "ghost" }),
-        `w-full flex items-center rounded-lg gap-4 p-3 ${isActive ? "font-bold bg-neutral-100 hover:bg-secondary" : undefined
+        `w-full flex items-center rounded-lg gap-4 p-3 ${isActive ? "bg-neutral-100 hover:bg-secondary" : undefined
         }`
       )}
     >

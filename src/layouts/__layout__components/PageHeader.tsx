@@ -3,15 +3,21 @@ import { Button } from "../../components/ui/Button";
 import { useState } from "react";
 import { PageHeaderFirstSection } from "./PageHeaderFirstSection";
 import { Dropdown } from "@/components/ui/Dropdown"
+import { useModal } from "@/hooks/useModal";
+import { Modal } from "@/components/ui/Modal";
+import { InformationForm } from "@/components/Form/InformationForm/InformationForm";
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
-
+  const { onOpen, isOpen, onClose} = useModal()
   const user = localStorage.getItem("user");
 
   return (
     <div className="flex gap-10 lg:gap-20 justify-between p-4 mb-6 mx-4">
       <PageHeaderFirstSection hidden={showFullWidthSearch} />
+      <Modal isOpen={isOpen} modalTitle="Create vidoe Content" onClose={onClose}>
+        <InformationForm />
+      </Modal>
       <form
         className={`gap-4 flex-grow max-w-[98%] justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"
           }`}
@@ -27,19 +33,22 @@ export function PageHeader() {
             <ArrowLeft />
           </Button>
         )}
+
         <div className="flex flex-grow max-w-[600px]">
           <input
             type="search"
-            placeholder="Search"
+            placeholder="Поиск"
             className="rounded-l-full border border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full focus:border-blue-500 outline-none"
           />
           <Button className="py-2 px-4 rounded-r-full border-secondary-border border border-l-0 flex-shrink-0">
             <Search />
           </Button>
         </div>
+
         <Button type="button" size="icon" className="flex-shrink-0">
           <Mic />
         </Button>
+
       </form>
       <div
         className={`flex-shrink-0 md:gap-2 w- ${showFullWidthSearch ? "hidden" : "flex"
@@ -56,7 +65,7 @@ export function PageHeader() {
         <Button size="icon" variant="ghost" className="md:hidden">
           <Mic />
         </Button>
-        <Button size="icon" variant="ghost">
+        <Button size="icon" onClick={onOpen}  variant="ghost">
           <Upload />
         </Button>
         <Button size="icon" variant="ghost">
