@@ -26,13 +26,14 @@ export default function Home() {
     }, [calegory, filteredCategories.length]);
 
 
+
     return (
         <>
             <Layout>
                 <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(40%,1fr))] max-[750px]:grid-cols-[repeat(auto-fill,minmax(95%,1fr))]">
                     <FilteredVidoes filteredVidoes={filteredCategories} />
                 </div>
-                {notCategory && <Empty/>}
+                {notCategory && <Empty />}
             </Layout>
         </>
     );

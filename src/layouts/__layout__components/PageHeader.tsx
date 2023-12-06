@@ -6,13 +6,28 @@ import { Dropdown } from "@/components/ui/Dropdown"
 import { useModal } from "@/hooks/useModal";
 import { Modal } from "@/components/ui/Modal";
 import { InformationForm } from "@/components/Form/InformationForm/InformationForm";
+import { useDebounce } from "@/hooks/useDebounce";
+import { useRef } from "react";
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
-  const { onOpen, isOpen, onClose} = useModal()
+  const { onOpen, isOpen, onClose } = useModal()
   const user = localStorage.getItem("user");
 
+  const searchQuery = useRef<HTMLInputElement | null>(null);
+
+  function focusInput() {
+    if (searchQuery.current) {
+      searchQuery.current.focus();
+    }
+  }
+  const debounceValue = useDebounce(searchQuery.current?.value as string, 1000);
+
+
+  console.log("test", debounceValue);
+  
   return (
+
     <div className="flex gap-10 lg:gap-20 justify-between p-4 mb-6 mx-4">
       <PageHeaderFirstSection hidden={showFullWidthSearch} />
       <Modal isOpen={isOpen} modalTitle="Create vidoe Content" onClose={onClose}>
@@ -21,6 +36,7 @@ export function PageHeader() {
       <form
         className={`gap-4 flex-grow max-w-[98%] justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"
           }`}
+        onSubmit={(event) => event.preventDefault()}
       >
         {showFullWidthSearch && (
           <Button
@@ -36,11 +52,15 @@ export function PageHeader() {
 
         <div className="flex flex-grow max-w-[600px]">
           <input
+            ref={searchQuery}
             type="search"
             placeholder="Поиск"
             className="rounded-l-full border border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full focus:border-blue-500 outline-none"
           />
-          <Button className="py-2 px-4 rounded-r-full border-secondary-border border border-l-0 flex-shrink-0">
+          <Button
+            type="submit"
+            onClick={focusInput}
+            className="py-2 px-4 rounded-r-full border-secondary-border border border-l-0 flex-shrink-0">
             <Search />
           </Button>
         </div>
@@ -65,7 +85,7 @@ export function PageHeader() {
         <Button size="icon" variant="ghost" className="md:hidden">
           <Mic />
         </Button>
-        <Button size="icon" onClick={onOpen}  variant="ghost">
+        <Button size="icon" onClick={onOpen} variant="ghost">
           <Upload />
         </Button>
         <Button size="icon" variant="ghost">

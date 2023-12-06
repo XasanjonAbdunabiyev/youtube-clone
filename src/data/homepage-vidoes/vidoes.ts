@@ -175,5 +175,43 @@ export const videos = [
     thumbnailUrl:
       "https://i.ytimg.com/vi/RVFAyFWO4go/maxresdefault.jpg",
     iframeUrl: "https://www.youtube.com/embed/f55qeKGgB_M?si=J6GRr-7R8r2G2j38",
+  }, 
+
+  {
+    id: "11",
+    title:
+      "Frontend Web Development: In-Depth Project Tutorial (HTML, CSS, JavaScript, TypeScript, React)",
+      channel: {
+        name: "freeCodeCamp.org",
+        id: "freeCodeCamp.org",
+        profileUrl:
+          "https://yt3.googleusercontent.com/ytc/APkrFKaqca-xQcJtp1Pqv-APucCa0nToHYGPVT00YBGOSw=s176-c-k-c0x00ffffff-no-rj",
+      },
+    category: "frontend web development",
+    postedAt: new Date("2023-10-05"),
+    duration: 32,
+    views: 3.4,
+    thumbnailUrl:
+      "https://images.pexels.com/photos/5926393/pexels-photo-5926393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    iframeUrl: "https://www.youtube.com/embed/MsnQ5uepIaE?si=ideeR1ddWkg7uwZ4",
+  } ,
+
+  {
+    id: "12",
+    title:
+      "Полный курс по Next.js 13.5 - Изучи новый Nextjs за 54 минуты!",
+      channel: {
+        name: "Red Group",
+        id: "freeCodeCamp.org",
+        profileUrl:
+          "https://yt3.googleusercontent.com/Jd-PFfjskkOy51Ql2LGcK2y_oxhnlgzMUhIyM7PLIsFCmmmsgtUnXCf0y7okuiJi_bxMhbOhkg=s176-c-k-c0x00ffffff-no-rj",
+      },
+    category: "next js",
+    postedAt: new Date("2023-10-05"),
+    duration: 32,
+    views: 3.4,
+    thumbnailUrl:
+      "https://miro.medium.com/v2/resize:fit:1000/1*v3XndYeIsBtk4CkpMf7vmA.jpeg",
+    iframeUrl: "https://www.youtube.com/embed/bxnx92gxAe8?si=ajLDad9hrUub3CWO",
   }
 ];
