@@ -21,13 +21,10 @@ export function PageHeader() {
       searchQuery.current.focus();
     }
   }
-  const debounceValue = useDebounce(searchQuery.current?.value as string, 1000);
 
-
-  console.log("test", debounceValue);
-  
+  if (searchQuery?.current?.validationMessage)
+ 
   return (
-
     <div className="flex gap-10 lg:gap-20 justify-between p-4 mb-6 mx-4">
       <PageHeaderFirstSection hidden={showFullWidthSearch} />
       <Modal isOpen={isOpen} modalTitle="Create vidoe Content" onClose={onClose}>

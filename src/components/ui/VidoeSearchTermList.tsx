@@ -3,8 +3,8 @@ type Props = {
     searchTerm: string;
 }
 
-export const VidoeSearchTermList = ({ searchTerm }: Props) => {
-    console.log(searchTerm);
+export const VidoeSearchTermList = ({ 
+    searchTerm }: Props) => {
     return (
         <div>VidoeSearchTermList</div>
     )
